@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Login Scene for UVA Course Reviews Application
+    
+    This FXML file defines the UI for user authentication with two main tabs:
+    1. Login Tab - For existing users to log in with username/password
+    2. Create Account Tab - For new users to register with validation
+    
+    Controller: edu.virginia.sde.reviews.LoginController
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.LoginController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Application Title -->
+            <Label text="UVA Course Reviews" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <!-- Tab container for login/create account options -->
+                  <TabPane prefHeight="300.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <!-- Login Tab -->
+                      <Tab text="Login">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                  <VBox alignment="CENTER" layoutX="85.0" layoutY="21.0" spacing="15.0">
+                                     <children>
+                                        <Label text="Log in to your account">
+                                           <font>
+                                              <Font size="14.0" />
+                                           </font>
+                                        </Label>
+                                        <!-- Username input field -->
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                           <children>
+                                              <Label text="Username:" />
+                                              <TextField fx:id="usernameField" promptText="Enter your username" />
+                                           </children>
+                                        </HBox>
+                                        <!-- Password input field -->
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                           <children>
+                                              <Label text="Password:" />
+                                              <PasswordField fx:id="passwordField" promptText="Enter your password" />
+                                           </children>
+                                        </HBox>
+                                        <!-- Error message display -->
+                                        <Label fx:id="loginErrorLabel" textFill="RED" />
+                                        <Button fx:id="loginButton" mnemonicParsing="false" text="Login" />
+                                     </children>
+                                  </VBox>
+                               </children>
+                            </AnchorPane>
+                        </content>
+                      </Tab>
+                      <!-- Create Account Tab -->
+                      <Tab text="Create Account">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                  <VBox alignment="CENTER" layoutX="85.0" layoutY="21.0" spacing="15.0">
+                                     <children>
+                                        <Label text="Create a new account">
+                                           <font>
+                                              <Font size="14.0" />
+                                           </font>
+                                        </Label>
+                                        <!-- New username input field -->
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                           <children>
+                                              <Label text="Username:" />
+                                              <TextField fx:id="newUsernameField" promptText="Choose a username" />
+                                           </children>
+                                        </HBox>
+                                        <!-- New password input field -->
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                           <children>
+                                              <Label text="Password:" />
+                                              <PasswordField fx:id="newPasswordField" promptText="Choose a password (min 8 chars)" />
+                                           </children>
+                                        </HBox>
+                                        <!-- Confirm password input field -->
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                           <children>
+                                              <Label text="Confirm:" />
+                                              <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" />
+                                           </children>
+                                        </HBox>
+                                        <!-- Error message display -->
+                                        <Label fx:id="createAccountErrorLabel" textFill="RED" />
+                                        <Button fx:id="createAccountButton" mnemonicParsing="false" text="Create Account" />
+                                     </children>
+                                  </VBox>
+                               </children>
+                            </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+            <!-- Close application button -->
+            <Button fx:id="closeButton" mnemonicParsing="false" text="Close Application" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane> 
