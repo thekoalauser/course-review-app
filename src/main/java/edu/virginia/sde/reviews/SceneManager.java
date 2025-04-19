@@ -17,6 +17,7 @@ public class SceneManager {
 
     /**
      * Switches to the login scene.
+     * This is the entry point of the application.
      * 
      * @param stage The main application stage
      */
@@ -33,7 +34,27 @@ public class SceneManager {
     }
 
     /**
+     * Switches to the course search scene.
+     * This scene will be implemented by another team member.
+     * 
+     * @param stage The main application stage
+     */
+    public static void switchToCourseSearchScene(Stage stage) {
+        // This method will be implemented by another team member
+        // For now, we'll display a message that this feature is in development
+        try {
+            // Placeholder implementation - in real app, this would load the course search scene
+            showAlert(stage, "Feature in Development", 
+                    "The Course Search feature is being implemented by another team member.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            showErrorMessage("Error with course search scene: " + e.getMessage());
+        }
+    }
+
+    /**
      * Switches to the course review scene.
+     * Displays reviews for a specific course and allows adding/editing reviews.
      * 
      * @param stage The main application stage
      * @param course The course to display reviews for
@@ -56,6 +77,7 @@ public class SceneManager {
 
     /**
      * Switches to the my reviews scene.
+     * Displays all reviews created by the current user.
      * 
      * @param stage The main application stage
      */
@@ -69,6 +91,23 @@ public class SceneManager {
             e.printStackTrace();
             showErrorMessage("Error loading my reviews scene: " + e.getMessage());
         }
+    }
+
+    /**
+     * Displays an information alert.
+     *
+     * @param stage The owner stage
+     * @param title The alert title
+     * @param message The alert message
+     */
+    private static void showAlert(Stage stage, String title, String message) {
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(
+                javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(stage);
+        alert.showAndWait();
     }
 
     /**

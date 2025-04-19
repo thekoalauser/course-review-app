@@ -63,7 +63,7 @@ public class LoginController {
     /**
      * Handles the login button click event.
      * Validates credentials and authenticates the user.
-     * If successful, stores the user in the session.
+     * If successful, transitions to the course search scene.
      */
     private void handleLogin() {
         String username = usernameField.getText().trim();
@@ -80,11 +80,9 @@ public class LoginController {
             User user = userDAO.getUserByUsername(username);
             SessionManager.getInstance().setCurrentUser(user);
             
-            // Show success message
-            showAlert("Login Successful", "Welcome, " + username + "!");
-            
-            // Note: Navigation to next scene would normally happen here
-            // but is removed as course search scene is not implemented
+            // Navigate to course search scene
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            SceneManager.switchToCourseSearchScene(stage);
         } else {
             loginErrorLabel.setText("Invalid username or password");
         }
