@@ -74,7 +74,7 @@ public class SceneManager {
             showErrorMessage("Error loading course review scene: " + e.getMessage());
         }
     }
-
+ 
     /**
      * Switches to the my reviews scene.
      * Displays all reviews created by the current user.
