@@ -63,7 +63,7 @@ public class LoginController {
     /**
      * Handles the login button click event.
      * Validates credentials and authenticates the user.
-     * If successful, transitions to the course search scene.
+     * If successful, transitions to the home page.
      */
     private void handleLogin() {
         String username = usernameField.getText().trim();
@@ -80,9 +80,9 @@ public class LoginController {
             User user = userDAO.getUserByUsername(username);
             SessionManager.getInstance().setCurrentUser(user);
             
-            // Navigate to course search scene
+            // Navigate to home page instead of course search
             Stage stage = (Stage) loginButton.getScene().getWindow();
-            SceneManager.switchToCourseSearchScene(stage);
+            SceneManager.switchToHomeScene(stage);
         } else {
             loginErrorLabel.setText("Invalid username or password");
         }

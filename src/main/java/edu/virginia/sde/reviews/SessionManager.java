@@ -77,4 +77,12 @@ public class SessionManager {
     public void logout() {
         currentUser = null;
     }
+    
+    /**
+     * Clears the current user session.
+     * This is an alias for logout() for better semantic clarity.
+     */
+    public void clearSession() {
+        logout();
+    }
 } 

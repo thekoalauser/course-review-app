@@ -34,6 +34,24 @@ public class SceneManager {
     }
 
     /**
+     * Switches to the home scene.
+     * This is the main navigation hub after login.
+     * 
+     * @param stage The main application stage
+     */
+    public static void switchToHomeScene(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("home-scene.fxml"));
+            Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
+            stage.setScene(scene);
+            stage.setTitle("UVA Course Reviews - Home");
+        } catch (IOException e) {
+            e.printStackTrace();
+            showErrorMessage("Error loading home scene: " + e.getMessage());
+        }
+    }
+
+    /**
      * Switches to the course search scene.
      * This scene will be implemented by another team member.
      * 
@@ -49,6 +67,24 @@ public class SceneManager {
         } catch (Exception e) {
             e.printStackTrace();
             showErrorMessage("Error with course search scene: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Switches to the course browse scene.
+     * Displays a list of all courses for the user to select from.
+     * 
+     * @param stage The main application stage
+     */
+    public static void switchToCourseBrowseScene(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-browse-scene.fxml"));
+            Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
+            stage.setScene(scene);
+            stage.setTitle("UVA Course Reviews - Browse Courses");
+        } catch (IOException e) {
+            e.printStackTrace();
+            showErrorMessage("Error loading course browse scene: " + e.getMessage());
         }
     }
 

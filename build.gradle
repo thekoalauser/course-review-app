@@ -9,6 +9,10 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
+application {
+    mainClass = 'edu.virginia.sde.reviews.CourseReviewsApplication'
+}
+
 repositories {
     mavenCentral()
 }
