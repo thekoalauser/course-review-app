@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- 
+  MyReviewsScene.fxml - JavaFX FXML layout for the "My Reviews" screen
+  
+  This view displays all courses that the current user has reviewed and allows them
+  to navigate back to the course list or select a course to view/edit their review.
+  
+  Key components:
+  - Back button to return to course list
+  - User label showing the current user's name
+  - ListView showing all courses reviewed by the user
+  - Label for when there are no reviews
+  
+  Controller: edu.virginia.sde.reviews.MyReviewsController
+-->
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
