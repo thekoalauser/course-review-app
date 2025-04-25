@@ -38,7 +38,7 @@ public class CourseBrowseController {
 
     /**
      * Initializes the controller, setting up UI elements and loading all courses.
-     * This method is automatically called after the FXML has been loaded.
+     * This method is automatically called after th e FXML has been loaded.
      */
     public void initialize() {
         courseDAO = new CourseDAO();

@@ -61,9 +61,10 @@ public class SceneManager {
         // This method will be implemented by another team member
         // For now, we'll display a message that this feature is in development
         try {
-            // Placeholder implementation - in real app, this would load the course search scene
-            showAlert(stage, "Feature in Development", 
-                    "The Course Search feature is being implemented by another team member.");
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-browse-scene.fxml"));
+            Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
+            stage.setScene(scene);
+            stage.setTitle("UVA Course Reviews - Browse Courses");
         } catch (Exception e) {
             e.printStackTrace();
             showErrorMessage("Error with course search scene: " + e.getMessage());
