@@ -71,14 +71,20 @@ public class CourseSearchController {
             return;
         }
 
-        // Try to parse course number if input is a number
-        Integer number = null;
-        try {
-            number = Integer.parseInt(query);
-        } catch (NumberFormatException ignored) {}
+        List<Course> matchingCourses;
 
-        // Attempt search across all fields with fuzzy title match
-        List<Course> matchingCourses = courseDAO.searchCourses(query, number, query);
+        if (query.matches("\\d{4}")) {
+            // 4 digit number -> search by course number
+            Integer number = Integer.parseInt(query);
+            matchingCourses = courseDAO.searchCourses(null, number, null);
+        } else if (query.matches("[a-zA-Z]{2,4}")) {
+            // 2-4 letters -> search by subject
+            matchingCourses = courseDAO.searchCourses(query, null, null);
+        } else {
+            // general title search
+            matchingCourses = courseDAO.searchCourses(null, null, query);
+        }
+
         searchResults.setAll(matchingCourses);
 
         if (matchingCourses.isEmpty()) {
@@ -88,6 +94,7 @@ public class CourseSearchController {
             noResultsLabel.setVisible(false);
         }
     }
+
 
 
     /**
