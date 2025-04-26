@@ -58,10 +58,8 @@ public class SceneManager {
      * @param stage The main application stage
      */
     public static void switchToCourseSearchScene(Stage stage) {
-        // This method will be implemented by another team member
-        // For now, we'll display a message that this feature is in development
         try {
-            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-browse-scene.fxml"));
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-search-scene.fxml"));
             Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
             stage.setScene(scene);
             stage.setTitle("UVA Course Reviews - Browse Courses");

@@ -30,6 +30,9 @@ public class CourseSearchController {
     @FXML
     private Label noResultsLabel;
 
+    @FXML
+    private Button addCourseButton;
+
     private CourseDAO courseDAO;
     private ObservableList<Course> searchResults;
 
@@ -43,6 +46,8 @@ public class CourseSearchController {
 
         searchButton.setOnAction(e -> performSearch());
         backButton.setOnAction(e -> handleBackButton());
+        addCourseButton.setOnAction(e -> openAddCourseDialog());
+
 
         resultsListView.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2 && !resultsListView.getSelectionModel().isEmpty()) {
@@ -101,5 +106,52 @@ public class CourseSearchController {
             Stage stage = (Stage) resultsListView.getScene().getWindow();
             SceneManager.switchToCourseReviewScene(stage, course);
         }
+    }
+
+    private void openAddCourseDialog() {
+        AddCourseDialog.showAndWait(result -> {
+            if (result != null) {
+                Course newCourse = new Course(
+                        result.getSubject().toUpperCase(),
+                        result.getNumber(),
+                        result.getTitle()
+                );
+                boolean success = courseDAO.createCourse(newCourse);
+                if (success) {
+                    showInfoAlert("Course Added", "The course was added successfully.");
+                    performSearch(); // refresh search results
+                } else {
+                    showErrorAlert("Failed to add course. Please try again.");
+                }
+            }
+            return null;
+        });
+    }
+
+    /**
+     * Utility method to show an information alert (for success messages).
+     *
+     * @param title The title of the alert window
+     * @param message The message to display
+     */
+    private void showInfoAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null); // No header
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    /**
+     * Utility method to show an error alert (for error messages).
+     *
+     * @param message The error message to display
+     */
+    private void showErrorAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null); // No header
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
