@@ -45,7 +45,7 @@ public class CourseReviewController {
     private Button deleteReviewButton;
     /** Button to navigate back to the course search scene */
     @FXML
-    private Button backButton;
+    private Button backButtonCourses;
 
     /** The course being reviewed */
     private Course course;
@@ -67,10 +67,12 @@ public class CourseReviewController {
         ratingSpinner.setValueFactory(valueFactory);
         
         // Set up button handlers
-        backButton.setOnAction(event -> handleBackButton());
+        backButtonCourses.setOnAction(event -> handleBackButtonCourses());
         submitReviewButton.setOnAction(event -> handleSubmitReview());
         editReviewButton.setOnAction(event -> handleEditReview());
         deleteReviewButton.setOnAction(event -> handleDeleteReview());
+        
+        System.out.println("CourseReviewController initialized");
     }
 
     /**
@@ -82,6 +84,9 @@ public class CourseReviewController {
      */
     public void initData(Course course) {
         this.course = course;
+        
+        // Debug output
+        System.out.println("initData called with course: " + course.getId() + " - " + course.toString());
         
         // Update UI with course info
         courseInfoLabel.setText(course.toString());
@@ -103,14 +108,17 @@ public class CourseReviewController {
         reviewsContainer.getChildren().clear();
         
         List<Review> reviews = reviewDAO.getReviewsForCourse(course.getId());
+        System.out.println("Loaded " + reviews.size() + " reviews for course ID: " + course.getId());
         
         if (reviews.isEmpty()) {
             Label noReviewsLabel = new Label("No reviews yet for this course.");
             reviewsContainer.getChildren().add(noReviewsLabel);
+            System.out.println("No reviews found for course: " + course.toString());
         } else {
             for (Review review : reviews) {
                 VBox reviewBox = createReviewBox(review);
                 reviewsContainer.getChildren().add(reviewBox);
+                System.out.println("Added review ID: " + review.getId() + " with rating: " + review.getRating());
             }
         }
     }
@@ -174,12 +182,12 @@ public class CourseReviewController {
     }
 
     /**
-     * Handles the back button action.
-     * Returns to the home page.
+     * Handles the back button for courses action.
+     * Returns to the course browse scene.
      */
-    private void handleBackButton() {
-        Stage stage = (Stage) backButton.getScene().getWindow();
-        SceneManager.switchToHomeScene(stage);
+    private void handleBackButtonCourses() {
+        Stage stage = (Stage) backButtonCourses.getScene().getWindow();
+        SceneManager.switchToCourseBrowseScene(stage);
     }
 
     /**

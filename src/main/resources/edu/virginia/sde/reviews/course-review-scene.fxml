@@ -11,7 +11,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Button fx:id="backButton" mnemonicParsing="false" text="Back to Courses" />
+                  <Button fx:id="backButtonCourses" mnemonicParsing="false" text="Back to Courses" />
                </children>
             </HBox>
             <Separator />
@@ -81,4 +81,4 @@
          </items>
       </SplitPane>
    </center>
-</BorderPane> 
+</BorderPane>

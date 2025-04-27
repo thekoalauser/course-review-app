@@ -90,7 +90,7 @@ public class SceneManager {
     /**
      * Switches to the course review scene.
      * Displays reviews for a specific course and allows adding/editing reviews.
-     * 
+     *
      * @param stage The main application stage
      * @param course The course to display reviews for
      */
