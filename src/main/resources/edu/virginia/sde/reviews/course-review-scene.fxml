@@ -11,11 +11,11 @@
          <children>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Button fx:id="backButtonCourses" mnemonicParsing="false" text="Back to Courses" />
+                  <Button fx:id="backButtonCourses" mnemonicParsing="false" text="Back to My Reviews" />
                </children>
             </HBox>
             <Separator />
-            <Label fx:id="courseInfoLabel" text="CS 3140: Software Development Essentials" textAlignment="CENTER">
+            <Label fx:id="courseInfoLabel" text="Ass" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
