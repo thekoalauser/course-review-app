@@ -187,7 +187,7 @@ public class CourseReviewController {
      */
     private void handleBackButtonCourses() {
         Stage stage = (Stage) backButtonCourses.getScene().getWindow();
-        SceneManager.switchToCourseSearchScene(stage);
+        SceneManager.switchToMyReviewsScene(stage);
     }
 
     /**
