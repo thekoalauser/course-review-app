@@ -77,7 +77,7 @@ public class SceneManager {
      */
     public static void switchToCourseBrowseScene(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-browse-scene.fxml"));
+            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-search-scene.fxml"));
             Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
             stage.setScene(scene);
             stage.setTitle("UVA Course Reviews - Browse Courses");
