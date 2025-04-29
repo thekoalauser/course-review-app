@@ -69,23 +69,6 @@ public class SceneManager {
         }
     }
 
-    /**
-     * Switches to the course browse scene.
-     * Displays a list of all courses for the user to select from.
-     * 
-     * @param stage The main application stage
-     */
-    public static void switchToCourseBrowseScene(Stage stage) {
-        try {
-            FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource("course-search-scene.fxml"));
-            Scene scene = new Scene(loader.load(), SCENE_WIDTH, SCENE_HEIGHT);
-            stage.setScene(scene);
-            stage.setTitle("UVA Course Reviews - Browse Courses");
-        } catch (IOException e) {
-            e.printStackTrace();
-            showErrorMessage("Error loading course browse scene: " + e.getMessage());
-        }
-    }
 
     /**
      * Switches to the course review scene.

@@ -21,10 +21,6 @@ public class HomeController {
     @FXML
     private Button courseSearchButton;
     
-    /** Button to navigate to the course reviews feature */
-    @FXML
-    private Button courseReviewsButton;
-    
     /** Button to navigate to the user's own reviews */
     @FXML
     private Button myReviewsButton;
@@ -49,7 +45,6 @@ public class HomeController {
         
         // Set up button event handlers
         courseSearchButton.setOnAction(event -> handleCourseSearchButton());
-        courseReviewsButton.setOnAction(event -> handleCourseReviewsButton());
         myReviewsButton.setOnAction(event -> handleMyReviewsButton());
         logoutButton.setOnAction(event -> handleLogoutButton());
     }
@@ -62,16 +57,7 @@ public class HomeController {
         Stage stage = (Stage) courseSearchButton.getScene().getWindow();
         SceneManager.switchToCourseSearchScene(stage);
     }
-    
-    /**
-     * Handles the course reviews button click.
-     * Navigates to the course browse screen where users can select a course to view reviews.
-     */
-    private void handleCourseReviewsButton() {
-        Stage stage = (Stage) courseReviewsButton.getScene().getWindow();
-        SceneManager.switchToCourseBrowseScene(stage);
-    }
-    
+
     /**
      * Handles the my reviews button click.
      * Navigates to the user's reviews screen.

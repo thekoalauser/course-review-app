@@ -183,11 +183,11 @@ public class CourseReviewController {
 
     /**
      * Handles the back button for courses action.
-     * Returns to the course browse scene.
+     * Returns to the course search scene.
      */
     private void handleBackButtonCourses() {
         Stage stage = (Stage) backButtonCourses.getScene().getWindow();
-        SceneManager.switchToCourseBrowseScene(stage);
+        SceneManager.switchToCourseSearchScene(stage);
     }
 
     /**
