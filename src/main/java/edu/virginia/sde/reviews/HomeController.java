@@ -13,6 +13,8 @@ import javafx.stage.Stage;
  * - My Reviews
  */
 public class HomeController {
+    @FXML
+    public Button exitButton;
     /** Label displaying welcome message with current username */
     @FXML
     private Label welcomeLabel;
@@ -47,6 +49,7 @@ public class HomeController {
         courseSearchButton.setOnAction(event -> handleCourseSearchButton());
         myReviewsButton.setOnAction(event -> handleMyReviewsButton());
         logoutButton.setOnAction(event -> handleLogoutButton());
+        exitButton.setOnAction(event -> handleExitButton());
     }
     
     /**
@@ -65,6 +68,12 @@ public class HomeController {
     private void handleMyReviewsButton() {
         Stage stage = (Stage) myReviewsButton.getScene().getWindow();
         SceneManager.switchToMyReviewsScene(stage);
+    }
+
+    // Button to close the program
+    private void handleExitButton(){
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+        stage.close();
     }
     
     /**
