@@ -50,7 +50,7 @@
                                            </children>
                                         </HBox>
                                         <!-- Password input field -->
-                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                        <HBox alignment="CENTER_LEFT" spacing="14.0">
                                            <children>
                                               <Label text="Password:" />
                                               <PasswordField fx:id="passwordField" promptText="Enter your password" />

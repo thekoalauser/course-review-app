@@ -29,6 +29,8 @@ public class Course {
     /** Average rating calculated from all reviews */
     private double averageRating;
 
+
+
     /**
      * Creates a course with a specified ID, subject, number, and title.
      * Typically used when loading an existing course from the database.
@@ -168,7 +170,7 @@ public class Course {
      */
     public String getFormattedAverageRating() {
         if (averageRating == 0.0) {
-            return "";
+            return " ";
         }
         return String.format("%.2f", averageRating);
     }

@@ -42,6 +42,17 @@ public class CourseSearchController {
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         averageColumn.setCellValueFactory(new PropertyValueFactory<>("averageRating"));
+        averageColumn.setCellFactory(column -> new TableCell<Course, Double>() {
+            @Override
+            protected void updateItem(Double rating, boolean empty) {
+                super.updateItem(rating, empty);
+                if (empty || rating == null || rating == 0.0) {
+                    setText(""); // show blank
+                } else {
+                    setText(String.format("%.2f", rating)); // show formatted rating
+                }
+            }
+        });
 
         loadAllCoursesSortedByTitle();
 

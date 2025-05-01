@@ -11,7 +11,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Button fx:id="backButtonCourses" mnemonicParsing="false" text="Back to My Reviews" />
+                  <Button fx:id="backButtonCourses" mnemonicParsing="false" text="Back to Course Search" />
                </children>
             </HBox>
             <Separator />

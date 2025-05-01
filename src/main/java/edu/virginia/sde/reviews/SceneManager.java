@@ -84,7 +84,7 @@ public class SceneManager {
             
             CourseReviewController controller = loader.getController();
             controller.initData(course);
-            
+
             stage.setScene(scene);
             stage.setTitle("UVA Course Reviews - " + course.toString());
         } catch (IOException e) {

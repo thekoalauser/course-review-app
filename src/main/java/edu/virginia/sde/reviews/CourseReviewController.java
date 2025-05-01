@@ -47,6 +47,7 @@ public class CourseReviewController {
     @FXML
     private Button backButtonCourses;
 
+
     /** The course being reviewed */
     private Course course;
     /** Data access object for review operations */
@@ -187,7 +188,7 @@ public class CourseReviewController {
      */
     private void handleBackButtonCourses() {
         Stage stage = (Stage) backButtonCourses.getScene().getWindow();
-        SceneManager.switchToMyReviewsScene(stage);
+        SceneManager.switchToCourseSearchScene(stage);
     }
 
     /**
