@@ -3,8 +3,8 @@
 ## Authors
 1) Harris, tnb6hv, [thekoalauser]
 2) Massoud Assadi, nrw6wf, [Massoud6]
-3) Name, netid, [GitHub profile name]
-4) Name, netid, [GitHub profile name]
+3) Abdullah Rana, mqt2qd, [FloatingSlope] 
+4) N/A, N/A, [N/A]
 
 ## To Run
 
@@ -28,16 +28,16 @@ List the primary contributions of each author. It is recommended to update this 
 
 ### [Author 3 - replace this with their name]
 
-* Author 3 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Cretaed the course review, my review, login, and home scenes
+* Added in the controllers for course review,  my review, login, and home scenes 
+* Iniated the database and adding in database content 
+* Fixed the back button tracking, minor bug fixes, and updated timestamps 
 
-### [Author 4 - replace this with their name]
+### [N/A]
 
-* Author 4 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* N/A
 
 ## Issues
 
 No known issues at time of submission
+Nope 

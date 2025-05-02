@@ -92,7 +92,12 @@ public class CourseReviewController {
         // Update UI with course info
         courseInfoLabel.setText(course.toString());
         String avgRating = course.getFormattedAverageRating();
-        averageRatingLabel.setText(avgRating.isEmpty() ? "No ratings yet" : "Average Rating: " + avgRating);
+        if (avgRating.isEmpty()) {
+            averageRatingLabel.setText("No ratings yet");
+        } else {
+            double rating = Double.parseDouble(avgRating);
+            averageRatingLabel.setText(String.format("Average Rating: %.2f/5.00", rating));
+        }
         
         // Load reviews for this course
         loadReviews();
@@ -135,8 +140,12 @@ public class CourseReviewController {
         VBox reviewBox = new VBox(5);
         reviewBox.getStyleClass().add("review-box");
         
-        Label ratingLabel = new Label("Rating: " + review.getRating() + "/5");
-        Label timestampLabel = new Label("Posted on: " + review.getTimestamp().toString());
+        Label ratingLabel = new Label(String.format("Rating: %.2f/5.00", (double)review.getRating()));
+        
+        // Format the timestamp to a more readable format
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedTimestamp = sdf.format(review.getTimestamp());
+        Label timestampLabel = new Label("Posted on: " + formattedTimestamp);
         
         reviewBox.getChildren().addAll(ratingLabel, timestampLabel);
         
@@ -188,7 +197,7 @@ public class CourseReviewController {
      */
     private void handleBackButtonCourses() {
         Stage stage = (Stage) backButtonCourses.getScene().getWindow();
-        SceneManager.switchToCourseSearchScene(stage);
+        SceneManager.goBack(stage);
     }
 
     /**
@@ -274,7 +283,12 @@ public class CourseReviewController {
         if (updatedCourse != null) {
             course.setAverageRating(updatedCourse.getAverageRating());
             String avgRating = course.getFormattedAverageRating();
-            averageRatingLabel.setText(avgRating.isEmpty() ? "No ratings yet" : "Average Rating: " + avgRating);
+            if (avgRating.isEmpty()) {
+                averageRatingLabel.setText("No ratings yet");
+            } else {
+                double rating = Double.parseDouble(avgRating);
+                averageRatingLabel.setText(String.format("Average Rating: %.2f/5.00", rating));
+            }
         }
     }
 

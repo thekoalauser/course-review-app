@@ -127,7 +127,7 @@ public class CourseSearchController {
 
     private void handleBackButton() {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        SceneManager.switchToHomeScene(stage);
+        SceneManager.goBack(stage);
     }
 
     private void showInfoAlert(String title, String message) {
