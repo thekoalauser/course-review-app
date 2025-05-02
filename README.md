@@ -2,7 +2,7 @@
 
 ## Authors
 1) Harris, tnb6hv, [thekoalauser]
-2) Name, netid, [GitHub profile name]
+2) Massoud Assadi, nrw6wf, [Massoud6]
 3) Name, netid, [GitHub profile name]
 4) Name, netid, [GitHub profile name]
 
@@ -20,11 +20,11 @@ List the primary contributions of each author. It is recommended to update this 
 * Created and implemented CourseSearchController
 * Updated SceneManager to point the Course Search button to the correct page
 
-### [Author 2 - replace this with their name]
+### [Massoud Assadi]
 
-* Author 2 contributions
-* as a bulleted list
-* each line starts with an asterisk and a space
+* Created an exit button on the home page
+* Fixed all the back buttons
+* Fixed the rating field to not display a number if there is no rating for a course
 
 ### [Author 3 - replace this with their name]
 
