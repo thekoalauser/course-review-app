@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 Course Review Application
 
 This project is a JavaFX-based CRUD (Create, Read, Update, Delete) desktop application that allows students to create accounts, search for university courses, and write anonymous course reviews. The application persists all data using a file-based SQLite database and provides a graphical user interface built with JavaFX.
