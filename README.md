@@ -1,43 +1,102 @@
-# Homework 6 - Course Review Application
+cat << 'EOF' > README.md
+Course Review Application
 
-## Authors
-1) Harris, tnb6hv, [thekoalauser]
-2) Massoud Assadi, nrw6wf, [Massoud6]
-3) Abdullah Rana, mqt2qd, [FloatingSlope] 
-4) N/A, N/A, [N/A]
+This project is a JavaFX-based CRUD (Create, Read, Update, Delete) desktop application that allows students to create accounts, search for university courses, and write anonymous course reviews. The application persists all data using a file-based SQLite database and provides a graphical user interface built with JavaFX.
 
-## To Run
+This repository represents my implementation of a capstone project focused on database-backed application design, GUI development, and persistent data management.
 
-[Add a brief description of which .java file to run, and what vm arguments are needed]
+--------------------------------------------------
 
-## Contributions
+FEATURES
 
-List the primary contributions of each author. It is recommended to update this with your contributions after each coding session.:
+- User account creation and login
+- Username uniqueness and password length enforcement
+- Course creation and searchable course catalog
+- Case-insensitive search by subject, number, or title
+- Anonymous course reviews with ratings and optional comments
+- Edit and delete functionality for user-owned reviews
+- Average course rating calculation
+- Persistent data storage using SQLite
+- User-facing error messages within the GUI
 
-### [Harris Ilyas]
+--------------------------------------------------
 
-* Created course-search-scene.fxml; Course Search page that allows user to search for a course
-* Created and implemented CourseSearchController
-* Updated SceneManager to point the Course Search button to the correct page
+APPLICATION OVERVIEW
 
-### [Massoud Assadi]
+Login
+- Users may log in with an existing username and password
+- New users can create an account with a unique username
+- Passwords must be at least 8 characters
+- All errors are displayed within the GUI
 
-* Created an exit button on the home page
-* Fixed all the back buttons
-* Fixed the rating field to not display a number if there is no rating for a course
+Course Search
+- Displays a list of all courses in the database
+- Supports searching by subject mnemonic, course number, or title
+- Allows users to add new courses with validated input
+- Provides navigation to course reviews and user-specific reviews
 
-### [Author 3 - replace this with their name]
+Course Reviews
+- Displays all reviews for a selected course
+- Shows average rating with two decimal precision
+- Users may submit only one review per course
+- Reviews can be edited or deleted by their author
+- Review timestamps are automatically generated
+- Reviewer identities remain anonymous
 
-* Cretaed the course review, my review, login, and home scenes
-* Added in the controllers for course review,  my review, login, and home scenes 
-* Iniated the database and adding in database content 
-* Fixed the back button tracking, minor bug fixes, and updated timestamps 
+My Reviews
+- Displays all reviews written by the logged-in user
+- Each review links back to the corresponding course review view
 
-### [N/A]
+--------------------------------------------------
 
-* N/A
+TECH STACK
 
-## Issues
+Language: Java  
+GUI Framework: JavaFX 21.0.9  
+JDK: OpenJDK 21.0.9  
+Database: SQLite (file-based)  
+Build Tool: Gradle  
+Persistence: JDBC  
 
-No known issues at time of submission
-Nope 
+--------------------------------------------------
+
+DATABASE DESIGN
+
+The application uses a normalized relational schema that persists users, courses, and reviews. Key constraints include unique usernames, prevention of duplicate reviews per user per course, and automatic database creation if the database file is missing.
+
+All data remains available across application restarts.
+
+--------------------------------------------------
+
+RUNNING THE APPLICATION
+
+Prerequisites:
+- Java JDK 21.0.9
+- JavaFX 21.0.9 (configured via Gradle)
+
+Run the application from the project root:
+./gradlew run
+
+No VM arguments or command-line interaction are required.
+
+--------------------------------------------------
+
+ERROR HANDLING AND USABILITY
+
+- The application does not crash on invalid input
+- All validation errors are displayed within the GUI
+- The UI fits within a 1280x720 resolution
+- Navigation between screens is consistent and intuitive
+
+--------------------------------------------------
+
+MY CONTRIBUTIONS
+
+I was responsible for designing the application architecture, implementing JavaFX scenes, building the SQLite-backed persistence layer, writing database queries, enforcing constraints, implementing CRUD workflows, and ensuring application stability and usability.
+
+--------------------------------------------------
+
+NOTES
+
+Passwords are stored in plaintext as permitted by the assignment scope. Real credentials should not be used. The project was built from scratch without copying code from external repositories.
+EOF
